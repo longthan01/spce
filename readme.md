@@ -4,7 +4,7 @@ Really simple test app for SPCE
 
 ## prerequisites
 * dotNet core 5.x
-* Nodejs 10.x
+* Nodejs 10.24.x
   
 ## How to run
 ### backend
