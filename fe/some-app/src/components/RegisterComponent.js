@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, InputNumber, Button, Radio, Table, Spin } from "antd";
+import { Form, Input, Button, Row, Col, Spin } from "antd";
 import { Component } from "react";
 import axios from "axios";
 import config from "../config";
@@ -43,8 +43,15 @@ class RegisterComponent extends Component {
       },
     };
     return (
+      <Row
+        type="flex"
+        justify="center"
+        align="middle"
+        style={{ minHeight: "100vh" }}
+      >
         <Spin spinning={this.state.loading}>
           <Form
+            style={{ minWidth: "500px" }}
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
             validateMessages={validationMessages}
@@ -96,6 +103,7 @@ class RegisterComponent extends Component {
             </FormItem>
           </Form>
         </Spin>
+      </Row>
     );
   }
 }
