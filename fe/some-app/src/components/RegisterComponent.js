@@ -43,11 +43,10 @@ class RegisterComponent extends Component {
       },
     };
     return (
-      <div>
         <Spin spinning={this.state.loading}>
           <Form
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
+            labelCol={{ span: 4 }}
+            wrapperCol={{ span: 20 }}
             validateMessages={validationMessages}
           >
             <FormItem
@@ -90,14 +89,13 @@ class RegisterComponent extends Component {
                 placeholder="Address"
               />
             </FormItem>
-            <FormItem wrapperCol={{ offset: 8, span: 16 }}>
+            <FormItem wrapperCol={{ offset: 4, span: 20 }}>
               <Button type="primary" onClick={this.eventHandlers.register}>
                 Register
               </Button>
             </FormItem>
           </Form>
         </Spin>
-      </div>
     );
   }
 }
