@@ -62,7 +62,11 @@ class RegisterComponent extends Component {
                 placeholder="Your email, must be an email"
               />
             </FormItem>
-            <FormItem name="password" label="Password">
+            <FormItem
+              name="password"
+              label="Password"
+              rules={[{ required: true }]}
+            >
               <Input
                 autoComplete="off"
                 type="password"
@@ -87,7 +91,9 @@ class RegisterComponent extends Component {
               />
             </FormItem>
             <FormItem wrapperCol={{ offset: 8, span: 16 }}>
-              <Button type="primary" onClick={this.eventHandlers.register}>Register</Button>
+              <Button type="primary" onClick={this.eventHandlers.register}>
+                Register
+              </Button>
             </FormItem>
           </Form>
         </Spin>
