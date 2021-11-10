@@ -15,7 +15,7 @@ namespace SomeApp.Implementations.Repositories
 			_dbContext = dbContext;
 		}
 
-		public async Task<int> AddAsync(string userName, string password)
+		public async Task<int> AddAsync(string userName, string password, string fullname, string address)
 		{
 			Random d = new Random();
 			var account = new Account
@@ -23,6 +23,8 @@ namespace SomeApp.Implementations.Repositories
 				Id = d.Next(), // temp fake
 				Username = userName,
 				Password = password,
+				Fullname = fullname,
+				Address = address,
 				IsVerified = false,
 				VerificationToken = Guid.NewGuid().ToString(),
 				VerificationTokenExpirationTime = DateTime.Now.AddDays(3)

@@ -19,6 +19,8 @@ class RegisterComponent extends Component {
         .post(`${config.API_ENDPOINT}/accounts`, {
           username: this.state.username,
           password: this.state.password,
+          fullname: this.state.fullname,
+          address: this.state.address
         })
         .then((response) => {
           if (response.status === 201) {
@@ -62,6 +64,25 @@ class RegisterComponent extends Component {
                 type="password"
                 onChange={(e) => this.setState({ password: e.target.value })}
                 placeholder="Your password"
+              />
+            </FormItem>
+            <FormItem
+              name="fullname"
+              label="Full name"
+            >
+              <Input
+                autoComplete="off"
+                type="text"
+                onChange={(e) => this.setState({ fullname: e.target.value })}
+                placeholder="Full name"
+              />
+            </FormItem>
+            <FormItem name="address" label="Address">
+              <Input
+                autoComplete="off"
+                type="text"
+                onChange={(e) => this.setState({ address: e.target.value })}
+                placeholder="Address"
               />
             </FormItem>
             <FormItem>

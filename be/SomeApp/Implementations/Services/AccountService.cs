@@ -25,7 +25,7 @@ namespace SomeApp.Implementations.Services
 		{
 			var existingAccount = await this._accountRepository.GetByUsername(request.Username);
 			if (existingAccount != null) throw new Exception("Account already existed");
-			var newAccountId = await this._accountRepository.AddAsync(request.Username, request.Password);
+			var newAccountId = await this._accountRepository.AddAsync(request.Username, request.Password, request.Fullname, request.Address);
 			if (newAccountId > 0)
 			{
 				var verificationToken = await this._accountRepository.GetVerificationTokenAsync(newAccountId);

@@ -8,6 +8,11 @@ Really simple test app for SPCE
   
 ## How to run
 ### backend
+###### Important
+
+You may need to setup your own SendGrid account and replace <i>SendGridApiKey</i> in <i>appsettings.json</i> with your own API key.
+
+
 on terminal 1
 ```bash
 cd ./be/someapp
