@@ -45,7 +45,11 @@ class RegisterComponent extends Component {
     return (
       <div>
         <Spin spinning={this.state.loading}>
-          <Form validateMessages={validationMessages}>
+          <Form
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            validateMessages={validationMessages}
+          >
             <FormItem
               name="username"
               rules={[{ required: true }, { type: "email" }]}
@@ -66,10 +70,7 @@ class RegisterComponent extends Component {
                 placeholder="Your password"
               />
             </FormItem>
-            <FormItem
-              name="fullname"
-              label="Full name"
-            >
+            <FormItem name="fullname" label="Full name">
               <Input
                 autoComplete="off"
                 type="text"
@@ -85,8 +86,8 @@ class RegisterComponent extends Component {
                 placeholder="Address"
               />
             </FormItem>
-            <FormItem>
-              <Button onClick={this.eventHandlers.register}>Register</Button>
+            <FormItem wrapperCol={{ offset: 8, span: 16 }}>
+              <Button type="primary" onClick={this.eventHandlers.register}>Register</Button>
             </FormItem>
           </Form>
         </Spin>
